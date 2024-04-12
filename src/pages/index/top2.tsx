@@ -1,39 +1,55 @@
 
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import { useTranslation } from 'react-i18next';
 
 export default function () {
+  const { t } = useTranslation();
   return <div className="flex flex-col w-full bg-gray-800 ">
-    <div className="flex flex-col p35 b-rounded-14 bg-white v-100%">
-      <div className="flex flex-col w-full">
-        <button className="b-rounded-14 bg-#294AF5 text-white w-30 flex flex-items-center b-4 b-gray-200 flex-justify-center">
-          <embed src="./src/assets/icon-fonts/eat.svg" className="mr-1" />
-          社区
-        </button>
+    <div className="flex flex-col flex-items-center p35 b-rounded-14 bg-white v-100%">
+      <div className="flex flex-col ">
+        <div>
+          <button className="b-rounded-14 bg-#294AF5 text-white flex flex-items-center b-4 b-gray-200 flex-justify-center p2 pl-4 pr-4">
+            <embed src="./src/assets/icon-fonts/eat.svg" className="mr-2" />
+            {t('top_2_community')}
+          </button>
+        </div>
         <span className="font-size-6 mt-2">
-          发现您的社区
+          {t('top_2_community_find')}
         </span>
-        <div className="w-full mt-2 flex flex-justify-between ">
+        <div className="mt-2 flex flex-justify-between ">
           <span className="font-size-3 ">
-            在真正自由的 Status 社区的虚拟世界中找到您的部落
+            {t('top_2_community_find_desc')}
           </span>
-          <span className='font-size-3 hover:text-#294AF5 left-auto flex flex-items-center  '>
-            了解更多
+          <span className='font-size-3 hover:text-#294AF5 flex flex-items-center mr-10'>
+            {t('more')}
             <ChevronRightIcon width={14} />
           </span>
         </div>
+        
+        <div className="flex flex-justify-center mt-10">
+          <div className='mr-8 flex flex-col flex-items-center p-5 b-rounded-10 b-solid b-gray-3 b-1 ' >
+            <img src='./src/assets/images/top2_1.png' className='w-80 h-140 ' />
+            <span className='text-3 mt-4 text-center w-80 text-#4B5563'>{t('top_2_img_1')}</span>
+          </div>
+          <div className='mr-8 flex flex-col flex-items-center p-5 b-rounded-10 b-solid b-gray-3 b-1 ' >
+            <div className='pos-relative'>
+              <div className='pos-absolute mt-3 left-50% flex flex-items-center' style={{ transform: 'translate(-50%)' }}>
+                <span className='text-3 text-center text-#4B5563'>{t('top_2_img_2a')}</span>
+              </div>
+              <img src='./src/assets/icon-fonts/top2_2a.svg' className='w-80 b-rounded-10 b-rounded-10 b-solid b-gray-3 b-1' />
+            </div>
+            <div className='flex flex-col flex-items-center b-rounded-10 b-solid b-gray-3 b-1 mt-10 w-80 '>
+
+              <img src='./src/assets/images/top2_2b.png' className='w-80  b-rounded-10' />
+              <span className='text-3 m-2 mb-6 text-center w-80 text-#4B5563'>{t('top_2_img_2b')}</span>
+            </div>
+          </div>
+          <div className='mr-8 flex flex-col flex-items-center p-5 b-rounded-10 b-solid b-gray-3 b-1 ' >
+            <img src='./src/assets/images/top2_3.png' className='w-80' />
+          </div>
+        </div>
       </div>
-      <div className="flex flex-justify-around mt-10">
-        <div >
-          <img src='./src/assets/images/top2_1.png' className='w-80 h-140' />
-        </div>
-        <div className='flex flex-col flex-justify-between'>
-          <img src='./src/assets/images/top2_2t.png' className='w-80 mb-10' />
-          <img src='./src/assets/images/top2_2b.png' className='w-80' />
-        </div>
-        <div>
-          <img src='./src/assets/images/top2_3.png' className='w-80' />
-        </div>
-      </div>
+
     </div>
   </div>
 }
